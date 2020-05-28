@@ -4,7 +4,6 @@ namespace App\Components\Http;
 
 use Illuminate\Http\Exceptions\HttpResponseException;
 use Illuminate\Support\Facades\Log;
-use Wedoctor\Convention\Domain\Results;
 
 /**
  * Class WyHttpException 封装http请求错误返回格式
@@ -33,15 +32,15 @@ class WyHttpException extends HttpResponseException
 			],
 		];
 		$this->report($data);
-		
+
 		parent::__construct(
 			response()->json(
-				Results::error($return['msg']),
+				$return,
 				200
 			)
 		);
 	}
-	
+
 	/**
 	 * 记录异常
 	 *
@@ -52,7 +51,7 @@ class WyHttpException extends HttpResponseException
 	{
 		Log::getLogger('http.client.exception')->error(static::class, $data);
 	}
-	
+
 	/**
 	 * @return array
 	 */
