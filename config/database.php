@@ -144,4 +144,8 @@ return [
 
     ],
 
+    /**
+     * 是否开启sql语句日志
+     */
+    'enableQueryLog' => env('ENABLE_QUERY_LOG', false),
 ];

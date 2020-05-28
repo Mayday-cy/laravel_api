@@ -1,72 +1,34 @@
-<p align="center"><img src="https://res.cloudinary.com/dtfbvvkyp/image/upload/v1566331377/laravel-logolockup-cmyk-red.svg" width="400"></p>
+# laravel框架
 
-<p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/d/total.svg" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/v/stable.svg" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
-</p>
+## 目录结构定义
 
-## About Laravel
+|目录 | 描述 |
+| :-: | :-: |
+| app | 目录包含应用的核心代码，注意不是框架的核心代码，框架的核心代码在 /vendor/laravel/lumen-framework 里面，此外你为应用编写的代码绝大多数也会放到这里 |
+| app/Console | 目录包含所有开发者编写的 Artisan 命令 |
+| app/Contracts | 目录包含应用的所有接口类定义 |
+| app/Events | 目录用于存放事件类,事件类用于告知应用其他部分某个事件发生情况并提供灵活的、解耦的处理机制 |
+| app/Facades | 目录包含应用的门面，门面为应用服务容器中的绑定类提供了一个“静态”接口 |
+| app/Exceptions | 目录包含应用的异常处理器，同时还是处理应用抛出的任何异常的好地方 |
+| app/Http | 目录包含控制器、中间件以及表单请求等，几乎所有通过 Web 进入应用的请求处理都在这里进行 |
+| app/Models | 目录包含应用所有的模型文件 |
+| app/Jobs | 目录用于存放队列任务，应用中的任务可以被推送到队列，也可以在当前请求生命周期内同步执行 |
+| app/Listeners | 目录包含处理事件的类（事件监听器），事件监听器接收一个事件并提供对该事件发生后的响应逻辑 |
+| app/Providers | 目录包含应用的所有服务提供者。服务提供者在应用启动过程中绑定服务到容器、注册事件以及执行其他任务为即将到来的请求处理做好准备工作 |
+| app/Services | 目录包含应用的所有微服务实例 |
+| app/Managers | 目录包含应用的本地service |
+| app/Components | 目录包含应用的所有组件 |
+| bootstrap | 目录包含少许文件，用于框架的启动和自动载入配置，还有一个 cache 文件夹，里面包含了框架为提升性能所生成的文件，如路由和服务缓存文件 |
+| bin | 目录包含可执行文件 |
+| config | 目录包含应用所有的配置文件 |
+| database | 目录包含数据库迁移文件及填充文件 |
+| public | 目录包含应用入口文件 index.php 和前端资源文件（图片、JavaScript、CSS等） |
+| resources | 目录包含应用视图文件和未编译的原生前端资源文件（LESS、SASS、JavaScript），以及本地化语言文件 |
+| routes | 目录包含应用定义的所有路由 |
+| storage | 目录包含了编译后的 Blade 模板、基于文件的 Session、文件缓存，以及其它由框架生成的文件 |
+| tests | 目录包含自动化测试文件 |
+| vendor | 目录包含应用所有通过 Composer 加载的依赖 |
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
 
-## Learning Laravel
-
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
-
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
-
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[British Software Development](https://www.britishsoftware.co)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- [UserInsights](https://userinsights.com)
-- [Fragrantica](https://www.fragrantica.com)
-- [SOFTonSOFA](https://softonsofa.com/)
-- [User10](https://user10.com)
-- [Soumettre.fr](https://soumettre.fr/)
-- [CodeBrisk](https://codebrisk.com)
-- [1Forge](https://1forge.com)
-- [TECPRESSO](https://tecpresso.co.jp/)
-- [Runtime Converter](http://runtimeconverter.com/)
-- [WebL'Agence](https://weblagence.com/)
-- [Invoice Ninja](https://www.invoiceninja.com)
-- [iMi digital](https://www.imi-digital.de/)
-- [Earthlink](https://www.earthlink.ro/)
-- [Steadfast Collective](https://steadfastcollective.com/)
-- [We Are The Robots Inc.](https://watr.mx/)
-- [Understand.io](https://www.understand.io/)
-- [Abdel Elrafa](https://abdelelrafa.com)
-- [Hyper Host](https://hyper.host)
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-source software licensed under the [MIT license](https://opensource.org/licenses/MIT).
