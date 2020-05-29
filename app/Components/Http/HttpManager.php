@@ -3,18 +3,7 @@
 namespace App\Components\Http;
 
 use App\Components\Http\Request\Base;
-use App\Components\Http\Request\BhcOpen;
-use App\Components\Http\Request\ChronicDisease;
-use App\Components\Http\Request\Echat;
-use App\Components\Http\Request\GaoDe;
-use App\Components\Http\Request\JavaHospitalHomepageProduct;
-use App\Components\Http\Request\Kano;
-use App\Components\Http\Request\User;
-use App\Components\Http\Request\Video;
-use App\Components\Http\Request\WholeProcess;
-use App\Components\Http\Request\XyhCard;
 use App\Contracts\Http\Factory;
-use App\Components\Http\Request\Java;
 use Illuminate\Support\Manager;
 
 /**

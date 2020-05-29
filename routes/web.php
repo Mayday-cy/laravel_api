@@ -12,10 +12,10 @@
 */
 
 Route::get('/', function () {
-    \Illuminate\Support\Facades\Log::getLogger('test')->info(1);
-    \Illuminate\Support\Facades\Log::getLogger('test222')->info(2);
-    $response = \App\Facades\Http::post('/api/wechat/getwebtitle')->toArray();
-
-    dd($response);
+//    \Illuminate\Support\Facades\Log::getLogger('test')->info(1);
+//    \Illuminate\Support\Facades\Log::getLogger('test222')->info(2);
+//    $response = \App\Facades\Http::post('/api/wechat/getwebtitle')->toArray();
+//
+//    dd($response);
     return view('welcome');
 });

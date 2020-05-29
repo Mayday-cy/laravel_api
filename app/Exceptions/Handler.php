@@ -2,6 +2,7 @@
 
 namespace App\Exceptions;
 
+use App\Components\ApiHelpers\ExceptionReport;
 use Exception;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 
@@ -46,6 +47,18 @@ class Handler extends ExceptionHandler
      */
     public function render($request, Exception $exception)
     {
-        return parent::render($request, $exception);
+//        return parent::render($request, $exception);
+        $reporter = ExceptionReport::make($exception);
+        if ($reporter->shouldReturn()) {
+            return $reporter->report();
+        }
+
+        if (env('APP_DEBUG')) {
+            //开发环境，则显示详细错误信息
+            return parent::render($request, $exception);
+        } else {
+            //线上环境,未知错误，则显示500
+            return $reporter->prodReport();
+        }
     }
 }

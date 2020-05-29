@@ -101,7 +101,7 @@ class Writer
 	 */
 	protected function getLineFormatter()
 	{
-		return new LineFormatter("%datetime% [%level_name%] : %extra.host_name%  %extra.file%:%extra.line% %extra.uid% %message% %context% \n", 'Y-m-d H:i:s,u', true, true);
+		return new LineFormatter("%datetime% [%level_name%] : %extra.host_name%  %extra.file%:%extra.line% %extra.uid% %message% %context% \n" . PHP_EOL, 'Y-m-d H:i:s,u', true, true);
 	}
 
 	/**

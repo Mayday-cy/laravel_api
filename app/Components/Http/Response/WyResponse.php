@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Str;
 use Psr\Http\Message\ResponseInterface;
 use \App\Contracts\Http\Response;
-use Wedoctor\Convention\Domain\Results;
 
 /**
  * Class WyResponse
@@ -24,9 +23,10 @@ class WyResponse implements Response, Arrayable, \ArrayAccess
 	 * @var \Psr\Http\Message\ResponseInterface
 	 */
 	protected $response;
-	/**
-	 * @var \App\Library\Http\Request\WyRequest
-	 */
+
+    /**
+     * @var WyRequest
+     */
 	protected $wyRequest;
 	/**
 	 * @var array 请求响应内容
@@ -66,7 +66,7 @@ class WyResponse implements Response, Arrayable, \ArrayAccess
 	 */
 	public function toResponse()
 	{
-		return response()->json(Results::success($this->toArray()));
+		return response()->json($this->toArray());
 	}
 
 	public function toArray()
